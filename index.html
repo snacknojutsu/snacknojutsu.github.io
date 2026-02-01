@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Will You Be My Valentine?</title>
+  <style>
+    body {
+      margin: 0;
+      height: 100vh;
+      background: #f6c1cc;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    }
+
+    .card {
+      background: #fff;
+      padding: 40px 50px;
+      border-radius: 20px;
+      text-align: center;
+      box-shadow: 0 20px 40px rgba(0,0,0,0.15);
+      position: relative;
+      width: 320px;
+    }
+
+    .face {
+      font-size: 64px;
+      position: relative;
+    }
+
+    .heart {
+      position: absolute;
+      right: -10px;
+      top: -10px;
+      font-size: 24px;
+    }
+
+    h2 {
+      margin: 20px 0 30px;
+      font-weight: 600;
+      color: #222;
+    }
+
+    .buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      position: relative;
+    }
+
+    button {
+      border: none;
+      padding: 14px 28px;
+      font-size: 16px;
+      border-radius: 999px;
+      cursor: pointer;
+      transition: all 0.2s ease;
+    }
+
+    #yes {
+      background: #e63973;
+      color: white;
+      font-weight: 600;
+    }
+
+    #yes:hover {
+      transform: scale(1.05);
+    }
+
+    #no {
+      background: #eaeaea;
+      color: #444;
+      position: absolute;
+      right: -10px;
+    }
+
+    .hint {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #666;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="card">
+    <div class="face">
+      🐱
+      <span class="heart">❤️</span>
+    </div>
+
+    <h2>
+      <strong>Harshita</strong> will you be my valentine?
+    </h2>
+
+    <div class="buttons">
+      <button id="yes" onclick="yesClicked()">Yes</button>
+      <button id="no" onmouseover="moveNo()">No</button>
+    </div>
+
+    <div class="hint">“No” seems a bit shy 😈</div>
+  </div>
+
+  <script>
+    function moveNo() {
+      const noBtn = document.getElementById("no");
+      const x = Math.random() * 120 - 60;
+      const y = Math.random() * 80 - 40;
+      noBtn.style.transform = `translate(${x}px, ${y}px)`;
+    }
+
+    function yesClicked() {
+      document.body.innerHTML = `
+        <div style="
+          display:flex;
+          align-items:center;
+          justify-content:center;
+          height:100vh;
+          font-family:sans-serif;
+          background:#f6c1cc;
+          text-align:center;
+        ">
+          <h1>💖 YAY! 💖<br>Best Valentine Ever 🥹</h1>
+        </div>
+      `;
+    }
+  </script>
+
+</body>
+</html>
